@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="icon.png" />
+    <title>Configiration</title>
+    <script src="config.js"></script>
+    <style>
+      body {
+        background-color: #f9fafb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+      }
+
+      .config-wrapper {
+        max-width: 448px;
+        min-height: 448px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        height: 100%;
+      }
+
+      .w-full {
+        width: 100%;
+      }
+
+      .form-wrapper {
+        border-radius: 10px;
+        padding: 32px 40px;
+        position: relative;
+        min-width: 368px;
+        display: flex;
+        flex-direction: column;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        background-color: rgba(255, 255, 255, 1);
+      }
+      .config-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .config-header img {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .config-header h2 {
+        color: rgba(17, 24, 39, 1);
+        font-weight: 800;
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+        text-align: center;
+        margin-bottom: 0px;
+      }
+
+      .config-header p {
+        color: rgba(75, 85, 99, 1);
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        text-align: center;
+      }
+
+      .config-header p a {
+        color: rgba(79, 70, 229, 1);
+        font-weight: 500;
+      }
+
+      .block {
+        display: block;
+      }
+
+      .config-form .button {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        font-weight: 500;
+        width: 100%;
+        background-color: rgba(79, 70, 229, 1);
+        border-radius: 0.375rem;
+        color: #ffffff;
+        margin-top: 20px;
+        border-style: none;
+        cursor: pointer;
+      }
+
+      .config-form .success-box {
+        display: none;
+        background-color: #a5d6a7;
+      }
+
+      .config-value {
+        margin-top: 20px;
+      }
+
+      .config-value input {
+        margin-top: 4px;
+      }
+
+      .config-value label {
+        color: rgba(55, 65, 81, 1);
+        font-weight: 500;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        display: block;
+      }
+
+      .config-value .input-field {
+        height: 38px;
+        width: 368px;
+        box-sizing: border-box;
+        width: 100%;
+        -webkit-appearance: none;
+        appearance: none;
+        border-radius: 0.375rem;
+        border: 1px solid rgba(209, 213, 219, 1);
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        background-color: transparent;
+      }
+
+      .config-form .input-field:focus {
+        outline: none;
+        border: 1px solid rgba(209, 213, 219, 1) !important;
+      }
+
+      .config-value .helper-text {
+        color: rgba(107, 114, 128, 1);
+        font-size: 0.75rem;
+        line-height: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="config-wrapper">
+      <div class="config-header">
+        <img src="./icon.png" alt="logo" width="85" />
+        <h2>ZIR Semantic Search Plugin</h2>
+        <p><a>Configure your settings below</a></p>
+      </div>
+      <div class="config-form">
+        <div class="form-wrapper">
+          <div class="config-value">
+            <label for="api key">Api Key</label>
+            <div>
+              <input id="apikey" type="text" class="input-field" />
+            </div>
+            <div class="helper-text">Enter your API key. If you don't have one yet, <a href="https://zir.dev/console/api-keys" target="_blank">click here</a> to create one</div>
+          </div>
+          <div class="config-value" id="corpus-container">
+            <label for="corpus id">Corpus IDs</label>
+            <div>
+              <input type="text" id="corpusId" class="input-field" />
+            </div>
+            <div class="helper-text">Enter one or more corpora IDs separated by commas.</div>
+          </div>
+          <div class="config-value">
+            <label for="customer id">Customer ID</label>
+            <div>
+              <input id="customerId" type="text" class="input-field" />
+            </div>
+          </div>
+          <div class="config-value">
+            <label for="results" id="results-label">Number of Results</label>
+            <input type="range" id="results" name="results" min="1" max="25" value="5" class="w-full" list="tickmarks" />
+
+            <datalist id="tickmarks">
+              <option value="5" label="5"></option>
+              <option value="10" label="10"></option>
+              <option value="15" label="15"></option>
+              <option value="20" label="20"></option>
+            </datalist>
+          </div>
+          <button id="success" class="button success-box">Configuration Saved</button>
+          <button id="save-btn" class="button">Save</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

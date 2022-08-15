@@ -1,0 +1,22 @@
+{
+  "name": "ZIR Semantic Search",
+  "version": "0.1",
+  "description": "Run ZIR Semantic Search on selected text within your browser tab.",
+  "manifest_version": 3,
+  "action": {
+    "default_title": "ZIR Semantic Search",
+    "default_icon": "icon.png"
+  },
+  "permissions": ["activeTab", "contextMenus", "storage", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "config.html",
+  "icons": { "16": "icon.png" },
+  "web_accessible_resources": [
+    {
+      "resources": [ "logo.svg", "config.html", "open-sans-v20-latin-regular.woff2" ],
+      "matches": [ "<all_urls>" ]
+    }
+  ]
+}
